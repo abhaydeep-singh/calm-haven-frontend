@@ -18,6 +18,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import axios from "axios";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
 // Example of already booked dates
 const bookedDates = [
@@ -46,7 +47,7 @@ function AptUser() {
   async function fetchHelper() {
     try {
       const helper = await axios.get(
-        "http://localhost:9000/api/v1/info/get-helper-list",
+        `${backendURL}/info/get-helper-list`,
         { withCredentials: true }
       );
       console.log(helper.data.data);
@@ -63,7 +64,7 @@ function AptUser() {
   async function addBooking() {
     try {
       const booking = await axios.post(
-        "http://localhost:9000/api/v1/booking/add",
+        `${backendURL}/booking/add`,
         {
           helper: selectedHelper,
           aptStatus: "pending",

@@ -28,6 +28,8 @@ import {
 } from "@/components/ui/popover";
 import axios from "axios";
 
+const backendURL = import.meta.env.VITE_BACKEND_URL;
+
 // Options for the appointment status
 const options = [
   { value: "accept", label: "Accept" },
@@ -49,7 +51,7 @@ function AptHelper() {
   async function getAptList() {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/booking/get-list",
+        `${backendURL}/booking/get-list`, // TODO: changed
         { withCredentials: true }
       );
       const appointments = response.data.data;
@@ -79,7 +81,7 @@ function AptHelper() {
 
   async function handleResolve(aptID) {
     try {
-      const deleteApt = await axios.delete(`http://localhost:9000/api/v1/booking/delete/${aptID}`, { withCredentials: true });
+      const deleteApt = await axios.delete(`${backendURL}/booking/delete/${aptID}`, { withCredentials: true });
       if (deleteApt.status === 201) {
         // Optionally refresh the appointment list after deletion
         getAptList();

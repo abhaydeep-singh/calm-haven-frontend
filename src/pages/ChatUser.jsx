@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import PersonSvg from "@/assets/icons/PersonSvg";
 import axios from "axios";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -25,7 +26,7 @@ function ChatUser() {
   async function getUserList() {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/v1/info/get-helper-list",
+        `${backendURL}/info/get-helper-list`,
         { withCredentials: true }
       );
       setUsers(response.data.data);
@@ -39,7 +40,7 @@ function ChatUser() {
     try {
       // Fetch the userId and old messages from the server
       const response = await axios.post(
-        `http://localhost:9000/api/v1/info/trigger-ws/${helperId}`,
+        `${backendURL}/info/trigger-ws/${helperId}`,
         {},
         { withCredentials: true }
       );

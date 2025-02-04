@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 function ArticleDetails() {
   const { id } = useParams(); // Get the article ID from the URL
   const [article, setArticle] = useState(null);
@@ -12,7 +12,7 @@ function ArticleDetails() {
     async function fetchArticle() {
       try {
         const response = await axios.get(
-          `http://localhost:9000/api/v1/blog/get/${id}`, // Assuming this is your API endpoint
+          `${backendURL}/blog/get/${id}`,
           { withCredentials: true }
         );
         setArticle(response.data.data);

@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { login } from "@/store/authSlice";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie"; // To handle cookie-based authentication
@@ -24,7 +25,7 @@ function LoginHelper() {
   async function handleLogin() {
     try {
       const response = await axios.post(
-        "http://localhost:9000/api/v1/users/login",
+        `${backendURL}/users/login`,
         {
           email,
           password,

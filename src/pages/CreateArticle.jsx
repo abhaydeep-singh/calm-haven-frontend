@@ -3,6 +3,7 @@ import JoditEditor from "jodit-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 
@@ -14,7 +15,7 @@ function CreateArticle() {
   async function handlePublish() {
     try {
       const post = await axios.post(
-        "http://localhost:9000/api/v1/blog/add",
+        `${backendURL}/blog/add`,
         {
           title,
           content,

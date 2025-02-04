@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import axios from "axios";
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
 
 function Blog() {
@@ -13,7 +14,7 @@ function Blog() {
   async function getArticle() {
     try {
       const articleList = await axios.get(
-        "http://localhost:9000/api/v1/blog/get-all",
+        `${backendURL}/blog/get-all`,
         { withCredentials: true }
       );
       setArticles(articleList.data.data); // stores an array of blogs
