@@ -15,6 +15,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { login } from "@/store/authSlice";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie"; // To handle cookie-based authentication
+import logo from "../assets/logo.png";
 
 function LoginHelper() {
   const [email, setEmail] = useState("");
@@ -60,7 +61,7 @@ function LoginHelper() {
   return (
     <div className="card p-6 h-screen flex gap-4 flex-col items-center justify-center">
       <div className="logo">
-        <img src="src/assets/logo.png" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
 
       <Card className="w-[300px] sm:w-[400px]">

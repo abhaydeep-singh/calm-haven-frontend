@@ -6,6 +6,7 @@ import axios from "axios";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
+import logo from "../assets/logo.png";
 
 function CreateArticle() {
   const [title, setTitle] = useState("");
@@ -35,7 +36,7 @@ function CreateArticle() {
     <div>
       <div className="body w-[80%] mx-auto ">
         <div className="logo my-6">
-          <img className="mx-auto" src="src/assets/logo.png" alt="" />
+          <img className="mx-auto" src={logo} alt="" />
         </div>
         <div className="titleEditor my-8 lg:mx-8 ">
           <h2 className="font-serif font-bold text-xl my-4">Add Title</h2>

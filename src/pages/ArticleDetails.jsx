@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
+import sample from "../assets/sample.png"
 function ArticleDetails() {
   const { id } = useParams(); // Get the article ID from the URL
   const [article, setArticle] = useState(null);
@@ -38,7 +39,7 @@ function ArticleDetails() {
     <div className="article-details md:w-[80%] mx-auto">
       <div className="px-6 mt-16 md:w-full lg:w-[90%]">
         <div className="img w-[90%]">
-          <img src="/src/assets/sample.png" alt="Article Image" />
+          <img src={sample} alt="Article Image" />
         </div>
         <div
           className="text-2xl md:text-4xl font-bold my-8"

@@ -1,4 +1,5 @@
 import React from "react";
+import sample from "../assets/sample.png"
 
 function Article({ post }) {
   return (
@@ -16,7 +17,7 @@ function Article({ post }) {
       {/* // FIXME: add post.description       */}
       {/* thumbanail config for PC */}
       <div className="thumbnail hidden md:block md:w-[50%] lg:w-[40%] xl:w-[30%] p-3">
-        <img src="src/assets/sample.png" alt="" />
+        <img src={sample} alt="" />
       </div>
     </div>
   );

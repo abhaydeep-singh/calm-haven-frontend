@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import axios from "axios";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Blog() {
   const [articles, setArticles] = useState([]);
@@ -30,7 +31,7 @@ function Blog() {
   return (
     <div className="lg:w-[80%] mx-auto">
       <div className="logo flex flex-col items-center my-5">
-        <img src="src/assets/logo.png" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
 
       {/* Using ScrollArea from ShadCN */}

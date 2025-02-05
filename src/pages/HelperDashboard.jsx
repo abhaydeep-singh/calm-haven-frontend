@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
+import logo from "../assets/logo.png";
 function HelperDashboard() {
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ function HelperDashboard() {
             <div className="logo mb-1">
               <img
                 className=" "
-                src="/src/assets/logo.png"
+                src={logo}
                 alt="alt"
                 />
             </div>

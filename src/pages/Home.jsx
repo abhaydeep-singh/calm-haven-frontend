@@ -7,6 +7,17 @@ import { useNavigate } from "react-router-dom";
 import VideoSection from "@/components/VideoSection";
 import Card from "@/components/Card/Card";
 
+// Importing Images
+import logo from "../assets/logo.png";
+import meditation2 from "../assets/meditation-2.png";
+import chat from "../assets/card-pics/chat.png";
+import appointment from "../assets/card-pics/appointment.png";
+import articles from "../assets/card-pics/articles.png";
+import facebook from"../assets/socials/facebook.png";
+import instagram from"../assets/socials/instagram.png";
+import linkedin from"../assets/socials/linkedin.png";
+import youtube from"../assets/socials/youtube.png";
+
 function Home() {
   const navigate = useNavigate();
   return (
@@ -25,7 +36,7 @@ function Home() {
           <div className="logo hidden sm:flex sm:items-center sm:w-[64%] md:w-[50%]  sm:mx-auto sm:my-6">
             <img
               className="sm:w-[100%] md:w-[80%] "
-              src="src/assets/logo.png"
+              src={logo}
               alt=""
             />
           </div>
@@ -145,7 +156,7 @@ function Home() {
         <div className=" flex flex-wrap justify-center gap-8 ">
           <Card
             props={{
-              imgUrl: "/src/assets/card-pics/chat.png",
+              imgUrl: {chat},
               title: "Chat With a Therapist",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
               buttText: "Chat Now",
@@ -154,7 +165,7 @@ function Home() {
           />
           <Card
             props={{
-              imgUrl: "/src/assets/card-pics/appointment.png",
+              imgUrl: {appointment},
 
               title: "Book an Appointment",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
@@ -164,7 +175,7 @@ function Home() {
           />
           <Card
             props={{
-              imgUrl: "/src/assets/card-pics/articles.png",
+              imgUrl: {articles},
               title: "Read Articles",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
               buttText: "Chat Now",
@@ -186,7 +197,7 @@ function Home() {
         {/* Meditation */}
         <div className="flex flex-col items-center my-24 p-5 md:rounded md:border lg:flex-row">
           <br />
-          <img src="src/assets/meditation-2.png" className="w-[80%]" alt="" />
+          <img src={meditation2} className="w-[80%]" alt="" />
 
           <div>
             <h2 className="text-3xl text-center">MEDITATION</h2>
@@ -217,10 +228,10 @@ function Home() {
         {/* Footer */}
         <div className="footer w-full bg-custom flex justify-center items-center mt-20 h-[10vh]">
           <div className="flex gap-10">
-            <img src="src/assets/socials/instagram.png"  alt="" />
-            <img src="src/assets/socials/facebook.png" alt="" />
-            <img src="src/assets/socials/youtube.png" alt="" />
-            <img src="src/assets/socials/linkedin.png" alt="" />
+            <img src={instagram}  alt="Instagram" />
+            <img src={facebook} alt="Facebook" />
+            <img src={youtube} alt="Youtube" />
+            <img src={linkedin} alt="Linkedin" />
           </div>
         </div>
       </div>

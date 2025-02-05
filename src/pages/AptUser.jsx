@@ -20,6 +20,9 @@ import {
 import axios from "axios";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+import therepy from "../assets/therepy.png";
+
 // Example of already booked dates
 const bookedDates = [
   new Date("2024-10-3"), // Example booked date
@@ -87,7 +90,7 @@ function AptUser() {
     <div>
       <div className="w-full my-8 mx-auto h-screen lg:w-[80%]">
         <div className="logo">
-          <img src="src/assets/logo.png" alt="" />
+          <img src={logo} alt="" />
         </div>
 
         <h2 className=" font-bold italic text-lg text-center mt-28 mb-3 text-primary lg:mt-10 lg:text-2xl">
@@ -97,7 +100,7 @@ function AptUser() {
         <div className="img my-4 mx-2 lg:w-full lg:flex lg:items-center lg:justify-around">
           <img
             className="rounded-xl lg:w-[60%]"
-            src="src/assets/therepy.png"
+            src={therepy}
             alt=""
           />
           <div className="desktop popover+book mt-9 lg:flex flex-col gap-4 items-center hidden">

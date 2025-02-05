@@ -15,6 +15,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../assets/logo.png";
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 
@@ -73,7 +74,7 @@ function Register() {
 
       <div className="card p-6 h-screen flex gap-4 flex-col items-center justify-center">
         <div className="logo ">
-          <img src="src/assets/logo.png" alt="" /> 
+          <img src={logo} alt="" /> 
           
           
           
