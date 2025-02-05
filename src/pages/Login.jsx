@@ -15,6 +15,8 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 import { login } from "@/store/authSlice";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie"; // To handle cookie-based authentication
+import meditation from "../assets/meditation.png";
+import logo from "../assets/logo.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -61,13 +63,13 @@ function Login() {
     <>
       {/* Navbar */}
       <div className="n-bar h-[70px] bg-custom flex items-center justify-around">
-        <img src="/src/assets/logo.png" className="w-[50%] md:w-[30%] lg:w-[20%]" alt="" />
+        <img src={logo} className="w-[50%] md:w-[30%] lg:w-[20%]" alt="" />
         <Button variant="outline">Urgent Help?</Button>
       </div>
       {/* Section 1 */}
       <div className="section my-5 flex flex-col sm:flex-row sm:items-center">
         <img
-          src="/src/assets/meditation.png"
+          src={meditation}
           className="rounded-2xl p-2"
           alt=""
         />
@@ -88,7 +90,7 @@ function Login() {
       {/* Login Section */}
       <div className="login w-full border flex flex-col gap-6 md:flex-row md:justify-around items-center p-6">
         <div>
-          <img src="/src/assets/logo.png" className="w-[90%]" alt="" />
+          <img src={logo} className="w-[90%]" alt="" />
           <br />
         <ul class="list-none pl-5">
           <li class="flex items-center py-2">
