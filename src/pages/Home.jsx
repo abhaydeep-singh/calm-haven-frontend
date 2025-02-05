@@ -156,7 +156,7 @@ function Home() {
         <div className=" flex flex-wrap justify-center gap-8 ">
           <Card
             props={{
-              imgUrl: {chat},
+              imgUrl: `${chat}`,
               title: "Chat With a Therapist",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
               buttText: "Chat Now",
@@ -165,7 +165,7 @@ function Home() {
           />
           <Card
             props={{
-              imgUrl: {appointment},
+              imgUrl: `${appointment}`,
 
               title: "Book an Appointment",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
@@ -175,7 +175,7 @@ function Home() {
           />
           <Card
             props={{
-              imgUrl: {articles},
+              imgUrl: `${articles}`,
               title: "Read Articles",
               desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora, quaerat!",
               buttText: "Chat Now",
