@@ -17,6 +17,15 @@ import { useDispatch } from "react-redux";
 import Cookies from "js-cookie"; // To handle cookie-based authentication
 import meditation from "../assets/meditation.png";
 import logo from "../assets/logo.png";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -64,7 +73,19 @@ function Login() {
       {/* Navbar */}
       <div className="n-bar h-[70px] bg-custom flex items-center justify-around">
         <img src={logo} className="w-[50%] md:w-[30%] lg:w-[20%]" alt="" />
-        <Button variant="outline">Urgent Help?</Button>
+        
+        <Sheet>
+  <SheetTrigger><Button variant="outline">Urgent Help?</Button></SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Call At 1800-599-0019</SheetTitle>
+      <SheetDescription>
+      The 24x7 Toll-Free Mental Health Rehabilitation Helpline KIRAN (1800-599-0019) was launched by DEPwD, Ministry of Social Justice and Empowerment in 13 languages to provide relief and support to persons with Mental Illness and in view of the growing incidence of mental illness.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+
       </div>
       {/* Section 1 */}
       <div className="section my-5 flex flex-col sm:flex-row sm:items-center">
